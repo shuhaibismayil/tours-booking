@@ -8,10 +8,10 @@ import "./header.css";
 const nav_links = [
   {
     path: '/home',
-    display: 'home'
+    display: 'Home'
   },
   {
-    path: '#',
+    path: '/about',
     display: 'About'
   },
   {
@@ -39,7 +39,7 @@ function Header() {
                 {
                   nav_links.map((item, index) => (
                     <li className="nav_item">
-                      <NavLink to={item.path}>{item.display}</NavLink>
+                      <NavLink to={item.path} className={navClass => navClass.isActive ? "active_link" : ""}>{item.display}</NavLink>
                     </li>
                   ))
                 }
@@ -53,7 +53,7 @@ function Header() {
               </div>
 
               <span className="mobile_menu">
-              <i class="ri-menu-line"></i>
+                <i class="ri-menu-line"></i>
               </span>
             </div>
           </div>
